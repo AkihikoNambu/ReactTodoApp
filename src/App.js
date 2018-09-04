@@ -10,10 +10,11 @@
     - map, filter, find使ってみた
     - html&cssの知識必要
     - event.preventDefault
-    - component分けたい
+    - componentとりあえず分けてみた
 */
 
 import React from 'react';
+import TodoList from './TodoList.js'
 import './App.css';
 
 export default class App extends React.Component {
@@ -91,41 +92,20 @@ export default class App extends React.Component {
           />
   			</form>
         <div className='todo-list'>
-          <h2 className='category-title'>Not Done</h2>
-          <ul>
-            {uncompletedTasks.map(task => {
-              return (
-                <li key={task.id} className='todo-task'>
-            			<input
-                    type='checkbox'
-                    onChange={this.handleCheck.bind(this, task.id)}
-                  />
-            			<label>
-                    {task.title}
-                  </label>
-            			<button onClick={this.handleRemove.bind(this, task.id)}>Remove</button>
-            		</li>
-              )
-            })}
-          </ul>
+          <TodoList
+            isCompleted={false}
+            tasks={uncompletedTasks}
+            checkHandler={this.handleCheck.bind(this)}
+            clickRemoveHandler={this.handleRemove.bind(this)}
+          />
         </div>
         <div className='todo-list'>
-          <h2 className='category-title'>Done</h2>
-          <ul>
-            {completedTasks.map(task => {
-              return (
-                <li key={task.id} className='todo-task'>
-            			<input
-                    type='checkbox'
-                    checked='checked'
-                    onChange={this.handleCheck.bind(this, task.id)}
-                  />
-            			<label>{task.title}</label>
-            			<button onClick={this.handleRemove.bind(this, task.id)}>Remove</button>
-            		</li>
-              )
-            })}
-          </ul>
+          <TodoList
+            isCompleted={true}
+            tasks={completedTasks}
+            checkHandler={this.handleCheck.bind(this)}
+            clickRemoveHandler={this.handleRemove.bind(this)}
+          />
         </div>
       </div>
     );
