@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css?family=Quicksand');
+
+body {
+	font-family: 'Raleway', sans-serif;
+	width: 480px;
+	margin: 64px auto 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+/* ヘッダー部 */
+.todo-header {
+	color: #b5b5b5;
+	text-align: center;
+	padding-bottom: 15px;
+	margin-bottom: 0;
+}
+
+/* フォーム部 */
+.todo-form {
+	display: flex;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+	color: #6a6a6a;
+	font-size: 36px;
+	border: none;
+	padding: 10px;
+	padding-left: 25px;
+	width: 80%;
+}
+
+.todo-input::placeholder {
+	color: #e5e5e5;
+}
+
+.todo-submit {
+	background: #ffffff;
+	width: 20%;
+	border: none;
+	border-left: 1px solid #e5e5e5;
+}
+
+.todo-input:focus,
+.todo-submit:focus,
+.todo-tabs > li > button:focus,
+.todo-task > button {
+	outline: none;
+}
+
+/* フォーム部 */
+.category-title {
+  padding: 16px 32px;
+  background-color: #dedede;
+  margin: 0;
+  color: #969696;
+}
+
+.todo-list {
+  border: 1px solid #dedede;
+}
+
+.todo-list ul {
+  margin: 0;
+  height: 160px;
+  overflow: scroll;
+}
+
+.todo-task {
+	font-family: 'Quicksand', sans-serif;
+	color: #666666;
+	margin: 0;
+	padding: 15px;
+	position: relative;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+.todo-task > input {
+	margin-right: 15px;
+}
+
+.todo-task > button {
+	position: absolute;
+	top: 15px;
+	right:20px;
+	border: none;
+	background: #ff6666;
+	color: #ffffff;
+	padding: 3px 7px;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.todo-task > button:hover {
+	background: #ff4c4c;
+}
