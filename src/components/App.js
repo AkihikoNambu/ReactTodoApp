@@ -15,7 +15,7 @@
 
 import React from 'react';
 import TodoList from './TodoList.js'
-import './App.css';
+import '../App.css';
 
 export default class App extends React.Component {
 
